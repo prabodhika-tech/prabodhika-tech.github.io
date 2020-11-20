@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>ThreeJS</title>
+    <title>Pabodhika-Tech</title>
     <style>
       body{
         margin: 0;
@@ -16,7 +16,7 @@
     </style>
   </head>
   <body>
-    <canvas id="myCanvas"></canvas>
+    <canvas id="HomeScreen"></canvas>
     <script src="js/three.js"></script>
     <script src="js/postprocessing/EffectComposer.js"></script>
     <script src="js/shaders/CopyShader.js"></script>
@@ -26,7 +26,7 @@
     <script src="js/postprocessing/GlitchPass.js"></script>
     <script>
       //RENDERER
-      var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('myCanvas'), antialias: true});
+      var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('HomeScreen'), antialias: true});
       renderer.setClearColor(0x000000);
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -46,7 +46,7 @@
       scene.add(point_light);
 
 
-      var geometry  = new THREE.DodecahedronGeometry(200, 0);
+      var geometry  = new THREE.DodecahedronGeometry(100, 0);
       var red_blue_water_texture = new THREE.TextureLoader().load( './images/texture/red-blue-water.jpg' );
       var material = new THREE.MeshLambertMaterial({
         color: 0xF3FFE2,
@@ -81,6 +81,14 @@
         // renderer.render(scene, camera);
         requestAnimationFrame(render);
       }
+
+      window.addEventListener( 'resize', onWindowResize, false );
+
+      function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+    }
 
     </script>
   </body>
