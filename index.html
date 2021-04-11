@@ -23,7 +23,7 @@
     <script src="js/shaders/DigitalGlitch.js"></script>
     <script src="js/postprocessing/RenderPass.js"></script>
     <script src="js/postprocessing/ShaderPass.js"></script>
-    <script src="js/postprocessing/GlitchPass.js"></script>
+    <!-- <script src="js/postprocessing/GlitchPass.js"></script> -->
     <script>
       //RENDERER
       var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('HomeScreen'), antialias: true});
@@ -65,10 +65,10 @@
       var renderPass = new THREE.RenderPass(scene, camera);
       composer.addPass(renderPass);
 
-      var glitchPass = new THREE.GlitchPass(0);
-      composer.addPass(glitchPass);
+      // var glitchPass = new THREE.GlitchPass(0);
+      // composer.addPass(glitchPass);
 
-      glitchPass.renderToScreen = true;
+      // glitchPass.renderToScreen = true;
 
       requestAnimationFrame(render);
 
